@@ -1,15 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import './globals.css'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Next.js Blog Toolkit',
@@ -19,13 +9,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50">
-        <nav className="bg-white shadow-sm border-b">
-          <div className="max-w-4xl mx-auto px-8 py-4">
-            <h2 className="text-xl font-bold">My Blog</h2>
+      <body className="min-h-screen text-slate-900 antialiased">
+        <nav className="border-b border-white/60 bg-white/80 shadow-sm backdrop-blur">
+          <div className="mx-auto flex max-w-4xl gap-6 px-8 py-4">
+            <Link href="/" className="text-xl font-bold tracking-tight transition-colors hover:text-amber-600">
+              My Blog
+            </Link>
+            <Link href="/posts" className="text-slate-600 transition-colors hover:text-amber-600">
+              Posts
+            </Link>
+            <Link href="/about" className="text-slate-600 transition-colors hover:text-amber-600">
+              About
+            </Link>
           </div>
         </nav>
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto max-w-4xl">
           {children}
         </div>
       </body>
