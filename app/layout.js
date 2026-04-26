@@ -23,9 +23,21 @@ export default function RootLayout({ children }) {
             </Link>
           </div>
         </nav>
+        
         <div className="mx-auto max-w-4xl">
           {children}
         </div>
+
+        <footer className="mt-16 border-t border-gray-200 bg-white/60">
+          <div className="mx-auto max-w-4xl px-8 py-6 text-center">
+            <p className="text-sm text-gray-600">
+              Built with Next.js • A beginner-friendly learning project
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
+              © 2024 Next.js Blog Toolkit
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   )
